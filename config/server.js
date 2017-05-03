@@ -15,8 +15,6 @@ const config = require('./config')
 const isInteractive = process.stdout.isTTY
 const cacheTime = 86400000 * 7 // 7 days
 
-const createAnalytics = require('./middlewares/scripts')
-
 const app = express()
 app.server = http.createServer(app)
 
@@ -38,8 +36,6 @@ app.use((req, res, next) => {
   }
   next()
 })
-
-const analytics = createAnalytics(config.server.analytics)
 
 app.get('*', (req, res) => {
   const html = fs.readFileSync(config.file.buildHtml, 'utf8')

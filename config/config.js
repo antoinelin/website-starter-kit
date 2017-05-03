@@ -6,6 +6,7 @@ module.exports = {
     buildDir: path.resolve(__dirname, '../build'),
     publicDir: path.resolve(__dirname, '../public'),
     modulesDir: path.resolve(__dirname, '../node_modules'),
+    configDir: path.resolve(__dirname, '../config'),
   },
   file: {
     indexHtml: path.resolve(__dirname, '../src/index.pug'),
