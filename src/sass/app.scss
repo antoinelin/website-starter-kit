@@ -1,6 +1,20 @@
-body {
-  background: grey;
-  p {
-    color: black;
-  }
-}
+/**
+ * Antoine Lin
+ * Twitter : @toinelin
+ * Mail : contact@antoinelin.com
+ *
+ * Work with Sass
+ * http://sass-lang.com/
+ *
+ * Copyright 2017
+ * Released under the MIT license
+ * http://opensource.org/licenses/MIT 
+ */
+
+@import "utils/variables";
+@import "utils/functions";
+@import "utils/mixins";
+
+@import "theme/colors";
+
+@import "base/reset";

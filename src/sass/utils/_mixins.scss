@@ -1,0 +1,82 @@
+/**
+ * pseudo
+ *
+ * Save time on making pseudo element component
+ * @param {css}
+ * @return {css}
+ */
+@mixin pseudo($display: block, $pos: absolute, $content: ''){
+  content: $content;
+  display: $display;
+  position: $pos;
+}
+/**
+ * respond-to
+ *
+ * @param {string} || {int} $breakpoint
+ * @return {css}
+ */
+@mixin respond-to($width, $type: min) {
+  @if map_has_key($breakpoints, $width) {
+    $width: map_get($breakpoints, $width);
+    @if $type == max {
+      $width: $width - 1px;
+    }
+    @media only screen and (#{$type}-width: $width) {
+      @content;
+    }
+  }
+}
+/**
+ * hardware
+ *
+ * @param {string}
+ * @return {css}
+ */
+@mixin hardware($backface: true, $perspective: 1000) {
+  @if $backface {
+    backface-visibility: hidden;
+  }
+  perspective: $perspective;
+}
+/**
+ * truncate
+ *
+ * @param {int}
+ * @return {css}
+ */
+@mixin truncate($truncation-boundary) {
+  max-width: $truncation-boundary;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+/**
+ * font-size
+ *
+ * @param {int}
+ * @return {css}
+ */
+@mixin font-size($size) {
+  font-size: $size;
+  font-size: calculateRem($size);
+}
+/**
+ * font-size
+ *
+ * @param {int}
+ * @return {css}
+ */
+@mixin font-face($font-name, $file-name, $weight: normal, $style: normal) {
+  @font-face {
+    font-family: quote($font-name);
+    src: url($file-name + '.eot');
+    src: url($file-name + '.eot?#iefix')  format('embedded-opentype'),
+    url($file-name + '.woff') format('woff'),
+    url($file-name + '.woff2') format('woff2'),
+    url($file-name + '.ttf')  format('truetype'),
+    url($file-name + '.svg##{$font-name}')  format('svg');
+    font-weight: $weight;
+    font-style: $style;
+  }
+}

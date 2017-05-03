@@ -1,0 +1,24 @@
+/**
+ * z-index
+ *
+ * @param {string}
+ * @return {css}
+ */
+@function z($name) {
+  @if index($z-indexes, $name) {
+    @return (length($z-indexes) - index($z-indexes, $name)) + 1;
+  } @else {
+    @warn 'There is no item "#{$name}" in this list; choose one of: #{$z-indexes}';
+    @return null;
+  }
+}
+/**
+ * calculateRem
+ *
+ * @param {int}
+ * @return {int}
+ */
+@function calculateRem($size) {
+  $remSize: $size / 16px;
+  @return $remSize * 1rem;
+}

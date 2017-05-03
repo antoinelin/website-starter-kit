@@ -101,8 +101,8 @@ function runDevServer(host, port, protocol) {
     clientLogLevel: 'none',
     inline: true,
     hot: true,
-    noInfo: false,
-    quiet: false,
+    noInfo: true,
+    quiet: true,
     watchOptions: {
       ignored: /node_modules/
     },

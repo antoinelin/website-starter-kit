@@ -58,8 +58,6 @@ if (app.get('env') === 'development') {
 console.log()
 console.log(`PORT: ${chalk.cyan(app.get('port'))}`)
 console.log()
-console.log(`ANALYTICS_ID: ${chalk.cyan(app.get('analytics'))}`)
-console.log()
 console.log(chalk.green('Server successfully started! ') + emoji.get('raised_hands'))
 console.log()
 /* eslint-enable */
