@@ -9,9 +9,14 @@ module.exports = {
   },
   file: {
     indexHtml: path.resolve(__dirname, '../src/index.pug'),
+    buildHtml: path.resolve(__dirname, '../build/index.html'),
     indexJs: path.resolve(__dirname, '../src/scripts/app.js'),
     indexCss: path.resolve(__dirname, '../src/sass/app.scss'),
     yarnLock: path.resolve(__dirname, '../yarn.lock'),
     packageJson: path.resolve(__dirname, '../package.json'),
+  },
+  server: {
+    analytics: 'UA-97812447-1',
+    port: 3000,
   },
 }
