@@ -1,9 +1,10 @@
+[![dependencies Status](https://david-dm.org/toinelin/website-starter-kit/status.svg)](https://david-dm.org/toinelin/website-starter-kit/status.svg)
 # Website-stater-kit
 
 Setup all your website project with a complete starter !
 
 Includes :
-- [Webpack 2](https://webpack.github.io/docs/),
+- [Webpack 2](https://webpack.github.io/docs/)
 - [Pug](https://pugjs.org/api/getting-started.html)
 - [babel / ES2015+](https://babeljs.io/learn-es2015/)
 - [sass](http://sass-lang.com/)
