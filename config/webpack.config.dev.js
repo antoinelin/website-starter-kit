@@ -1,9 +1,16 @@
 const webpack = require('webpack')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const WatchMissingNodeModulesPlugin = require('react-dev-utils/WatchMissingNodeModulesPlugin')
+const CaseSensitivePathsPlugin = require('case-sensitive-paths-webpack-plugin')
+const InterpolateHtmlPlugin = require('react-dev-utils/InterpolateHtmlPlugin')
 const path = require('path')
+const getClientEnvironment = require('./env')
 
 const config = require('./config')
+
+const publicPath = ''
+const publicUrl = ''
+const env = getClientEnvironment(publicUrl)
 
 module.exports = {
   devtool: 'eval-source-map',
@@ -16,7 +23,7 @@ module.exports = {
     path: config.path.buildDir,
     pathinfo: true,
     filename: 'static/js/app.bundle.js',
-    publicPath: '',
+    publicPath,
   },
   resolve: {
     extensions: ['.js', '.json', '.pug', '.scss'],
@@ -26,6 +33,10 @@ module.exports = {
       {
         test: /\.pug$/,
         use: ['html-loader', 'pug-html-loader'],
+      },
+      {
+        test: /\.twig$/,
+        use: 'twig-loader',
       },
       {
         enforce: 'pre',
@@ -79,12 +90,15 @@ module.exports = {
     ],
   },
   plugins: [
+    new InterpolateHtmlPlugin(env.raw),
     new HtmlWebpackPlugin({
       inject: true,
-      template: path.resolve(__dirname, '../src/index.pug'),
+      template: path.resolve(__dirname, '../src/index.twig'),
     }),
+    new webpack.DefinePlugin(env.stringified),
     new webpack.HotModuleReplacementPlugin(),
     new webpack.NoEmitOnErrorsPlugin(),
+    new CaseSensitivePathsPlugin(),
     new WatchMissingNodeModulesPlugin(config.path.modulesDir),
   ],
   node: {

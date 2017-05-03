@@ -9,7 +9,7 @@ module.exports = {
     configDir: path.resolve(__dirname, '../config'),
   },
   file: {
-    indexHtml: path.resolve(__dirname, '../src/index.pug'),
+    indexHtml: path.resolve(__dirname, '../src/index.twig'),
     buildHtml: path.resolve(__dirname, '../build/index.html'),
     indexJs: path.resolve(__dirname, '../src/scripts/app.js'),
     indexCss: path.resolve(__dirname, '../src/sass/app.scss'),

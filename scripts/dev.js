@@ -95,7 +95,7 @@ function setupCompiler(host, port, protocol) {
 
 function runDevServer(host, port, protocol) {  
   devServer = new webpackDevServer(compiler, {
-    contentBase: './',
+    contentBase: paths.path.publicDir,
     publicPath: config.output.publicPath,
     compress: true,
     clientLogLevel: 'none',

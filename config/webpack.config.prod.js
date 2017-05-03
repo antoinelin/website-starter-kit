@@ -1,10 +1,18 @@
+const webpack = require('webpack')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const ExtractTextPlugin = require('extract-text-webpack-plugin')
 const ManifestPlugin = require('webpack-manifest-plugin')
 const WatchMissingNodeModulesPlugin = require('react-dev-utils/WatchMissingNodeModulesPlugin')
+const InterpolateHtmlPlugin = require('react-dev-utils/InterpolateHtmlPlugin')
 const path = require('path')
+const uri = require('./uri')
+const getClientEnvironment = require('./env')
 
 const config = require('./config')
+
+const publicPath = uri.servedPath
+const publicUrl = publicPath.slice(0, -1)
+const env = getClientEnvironment(publicUrl)
 
 module.exports = {
   devtool: 'source-map',
@@ -24,6 +32,10 @@ module.exports = {
       {
         test: /\.pug$/,
         use: ['html-loader', 'pug-html-loader'],
+      },
+      {
+        test: /\.twig$/,
+        use: 'twig-loader',
       },
       {
         test: /\.(js|jsx)$/,
@@ -89,13 +101,15 @@ module.exports = {
         collapseWhitespace: true,
       },
       hash: true,
-      template: path.resolve(__dirname, '../src/index.pug'),
+      template: path.resolve(__dirname, '../src/index.twig'),
     }),
     new ExtractTextPlugin({ filename: 'static/css/app.bundle-[contenthash:8].css', disable: false }),
     new ManifestPlugin({
       fileName: 'asset-manifest.json',
     }),
     new WatchMissingNodeModulesPlugin(config.path.modulesDir),
+    new InterpolateHtmlPlugin(env.raw),
+    new webpack.DefinePlugin(env.stringified),
   ],
   node: {
     fs: 'empty',

@@ -5,7 +5,7 @@ Setup all your website project with a complete starter !
 
 Includes :
 - [Webpack 2](https://webpack.github.io/docs/)
-- [Pug](https://pugjs.org/api/getting-started.html)
+- [Twig](https://twig.sensiolabs.org/)
 - [babel / ES2015+](https://babeljs.io/learn-es2015/)
 - [sass](http://sass-lang.com/)
 - [Webpack hot reload](https://github.com/glenjamin/webpack-hot-middleware)
