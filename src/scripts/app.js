@@ -1,5 +1,5 @@
 import $ from 'zepto-modules'
-import Loader from './components/Loader' //eslint-disable-line
+import Loader from './components/Loader'
 
 require('./../sass/app.scss')
 
