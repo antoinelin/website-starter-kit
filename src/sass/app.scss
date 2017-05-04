@@ -15,8 +15,16 @@
 @import "utils/functions";
 @import "utils/mixins";
 
-@import "theme/colors";
-
 @import "base/reset";
 
+@import "theme/colors";
+@import "theme/fonts";
+
+@import "base/body";
+
+@import "layouts/container";
+@import "layouts/content";
+
 @import "components/progress";
+@import "components/loader";
+@import "components/panels";

@@ -1,0 +1,65 @@
+@font-face {
+  font-family: 'Josefin Sans';
+  src: './../fonts/josefinsans/josefinsans-light-webfont.eot';
+  src: './../fonts/josefinsans/josefinsans-light-webfont.eot' format('woff'),
+  './../fonts/josefinsans/josefinsans-light-webfont.eot' format('woff2'),
+  './../fonts/josefinsans/josefinsans-light-webfont.eot'  format('truetype'),
+  './../fonts/josefinsans/josefinsans-light-webfont.eot'  format('svg');
+  font-weight: light;
+  font-style: light;
+}
+
+@font-face {
+  font-family: 'Josefin Sans';
+  src: './../fonts/josefinsans/josefinsans-regular-webfont.eot';
+  src: './../fonts/josefinsans/josefinsans-regular-webfont.eot' format('woff'),
+  './../fonts/josefinsans/josefinsans-regular-webfont.eot' format('woff2'),
+  './../fonts/josefinsans/josefinsans-regular-webfont.eot'  format('truetype'),
+  './../fonts/josefinsans/josefinsans-regular-webfont.eot'  format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Josefin Sans';
+  src: './../fonts/josefinsans/josefinsans-semibold-webfont.eot';
+  src: './../fonts/josefinsans/josefinsans-semibold-webfont.eot' format('woff'),
+  './../fonts/josefinsans/josefinsans-semibold-webfont.eot' format('woff2'),
+  './../fonts/josefinsans/josefinsans-semibold-webfont.eot'  format('truetype'),
+  './../fonts/josefinsans/josefinsans-semibold-webfont.eot'  format('svg');
+  font-weight: bold;
+  font-style: bold;
+}
+
+body {
+  font-family: 'Josefin Sans', sans-serif;
+  line-height: 1.1rem;
+  color: $black;
+}
+
+h1 {
+  font-family: 'Josefin Sans', sans-serif;
+  @include font-size(43.875px);
+  font-weight: bold;
+  color: $violet;
+}
+
+h2 {}
+
+p {
+  font-family: 'Josefin Sans', sans-serif;
+  @include font-size(13px);
+  font-weight: light;
+  color: $black;
+}
+
+a {
+  text-decoration: none;
+  color: $violet;
+  transition: 200ms ease-in;
+}
+
+a:hover {
+  text-decoration: none;
+  border-bottom: solid 1px $violet;
+}

@@ -69,17 +69,17 @@ module.exports = {
       },
       {
         test: /\.woff(\?v=\d+\.\d+\.\d+)?$/,
-        loader: 'url',
+        loader: 'file',
         query: { limit: 10000, mimetype: 'application/font-woff', name: 'static/fonts/[name]/[name].[ext]' },
       },
       {
         test: /\.woff2(\?v=\d+\.\d+\.\d+)?$/,
-        loader: 'url',
+        loader: 'file',
         query: { limit: 10000, mimetype: 'application/font-woff', name: 'static/fonts/[name]/[name].[ext]' },
       },
       {
         test: /\.ttf(\?v=\d+\.\d+\.\d+)?$/,
-        loader: 'url',
+        loader: 'file',
         query: { limit: 10000, mimetype: 'application/octet-stream', name: 'static/fonts/[name]/[name].[ext]' },
       },
       {
