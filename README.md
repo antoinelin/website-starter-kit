@@ -1,7 +1,9 @@
 [![dependencies Status](https://david-dm.org/toinelin/website-starter-kit/status.svg)](https://david-dm.org/toinelin/website-starter-kit/status.svg)
 # Website-stater-kit
 
-Setup all your website project with a complete starter !
+Website-starter-kit is a simple boilerplate with useful features to create SPAs quickly without spending time on config!
+
+Live demo : https://website-starter-kit.now.sh/
 
 Includes :
 - [Webpack 2](https://webpack.github.io/docs/)

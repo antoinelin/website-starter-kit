@@ -1,7 +1,7 @@
 {
-  "name": "webpack-starter",
+  "name": "website-starter-kit",
   "version": "1.0.0",
-  "description": "Webpack project starter.",
+  "description": "Website-starter-kit is a simple boilerplate with useful features to create SPAs quickly without spending time on config!",
   "scripts": {
     "dev": "node scripts/dev.js",
     "build": "node scripts/build.js",
